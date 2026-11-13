@@ -1,10 +1,3 @@
-//
-//  MyTaskUITests.swift
-//  MyTaskUITests
-//
-//  Created by Home on 13.11.2026.
-//
-
 import XCTest
 
 final class MyTaskUITests: XCTestCase {

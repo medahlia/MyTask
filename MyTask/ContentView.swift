@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MyTask
-//
-//  Created by Home on 13.11.2026.
-//
-
 import SwiftUI
 import SwiftData
 

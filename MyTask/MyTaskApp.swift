@@ -1,10 +1,3 @@
-//
-//  MyTaskApp.swift
-//  MyTask
-//
-//  Created by Home on 13.11.2026.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -27,6 +20,6 @@ struct MyTaskApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(for: [Task.self, Category.self])
     }
 }

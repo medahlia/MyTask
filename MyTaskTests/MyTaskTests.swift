@@ -1,10 +1,3 @@
-//
-//  MyTaskTests.swift
-//  MyTaskTests
-//
-//  Created by Home on 13.11.2026.
-//
-
 import Testing
 
 struct MyTaskTests {
