@@ -55,11 +55,51 @@ struct TaskRowView: View {
     }
 }
 
-#Preview {
-    let task = Task(title: "Complete laboratory work")
-    task.completedAt = .now
-    
-    TaskRowView(task: task)
+#Preview("Active Task") {
+    let container = try! ModelContainer(
+        for: Task.self, Category.self,
+        configurations: ModelConfiguration(
+            isStoredInMemoryOnly: true
+        )
+    )
+
+    let category = Category(
+        name: "Навчання",
+        color: "purple",
+        icon: "book"
+    )
+
+    let task = Task(
+        title: "Finish SwiftUI project",
+        notes: "Work on TaskFlow",
+        priority: "high",
+        category: category
+    )
+
+    container.mainContext.insert(category)
+    container.mainContext.insert(task)
+
+    return TaskRowView(task: task)
         .padding()
-        .modelContainer(for: [Task.self, Category.self], inMemory: true)
+        .modelContainer(container)
+}
+
+#Preview("Completed Task") {
+    let container = try! ModelContainer(
+        for: Task.self, Category.self,
+        configurations: ModelConfiguration(
+            isStoredInMemoryOnly: true
+        )
+    )
+
+    let task = Task(
+        title: "Complete laboratory work"
+    )
+
+    task.completedAt = .now
+    container.mainContext.insert(task)
+
+    return TaskRowView(task: task)
+        .padding()
+        .modelContainer(container)
 }
