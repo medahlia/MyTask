@@ -16,7 +16,7 @@ final class Task {
     
     var category: Category? // not optional
     
-    var isCompleted: Bool { completedAt != nil } // ?????
+    var isCompleted: Bool { completedAt != nil } 
     
     init(title: String, notes: String = "", dueDate: Date? = nil,
          priority: String = "medium", category: Category? = nil) {
